@@ -19,7 +19,7 @@ var specialCharacters = confirm ("Would you like to include special characters?"
 
 
 if (numbers) {
-  randomArray = randomArray.concat(uppercaseOptions);
+  randomArray = randomArray.concat(numberOptions);
 }
 
 if (upperCases) {
@@ -36,11 +36,11 @@ if (specialCharacters) {
 
 console.log(randomArray)
 
-for (var i = 0; i < passLength; i++) {
+for (var i = 0; i > passLength; i++) {
   passArray.push (randomArray[Math.floor(math.random() * randomArray.length)]);
 }
 
-
+return passArray.join("");
 
 }
 
@@ -49,7 +49,7 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password
+  passwordText.value = password;
 }
 
 // Add event listener to generate button
