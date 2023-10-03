@@ -13,8 +13,8 @@ function generatePassword () {
 
   var passLength = prompt ("Choose a password length between 8 and 128 characters");
   var numbers = confirm ("Would you like to include numbers?");
-  var upperCases = confirm ("Would like to include uppercases?")
-  var lowerCases = confirm ("Would like to include lowercases?")
+  var upperCases = confirm ("Would you like to include uppercases?")
+  var lowerCases = confirm ("Would you like to include lowercases?")
   var specialCharacters = confirm ("Would you like to include special characters?");
 
 
