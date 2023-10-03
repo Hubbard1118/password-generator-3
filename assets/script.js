@@ -3,45 +3,44 @@ var generateBtn = document.querySelector("#generate");
 
 function generatePassword () {
 
-var uppercaseOptions = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-var lowercaseOptions = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o",  "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var numberOptions= ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-var specialOptions = ["@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+"];
+  var uppercaseOptions = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+  var lowercaseOptions = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o",  "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+  var numberOptions= ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+  var specialOptions = ["@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+"];
 
-var randomArray = [];
-var passArray = [];
+  var randomArray = [];
+  var passArray = [];
 
-var passLength = prompt ("Choose a password length between 8 and 128 characters");
-var numbers = confirm ("Would you like to include numbers?");
-var upperCases = confirm ("Would like to include uppercases?")
-var lowerCases = confirm ("Would like to include lowercases?")
-var specialCharacters = confirm ("Would you like to include special characters?");
+  var passLength = prompt ("Choose a password length between 8 and 128 characters");
+  var numbers = confirm ("Would you like to include numbers?");
+  var upperCases = confirm ("Would like to include uppercases?")
+  var lowerCases = confirm ("Would like to include lowercases?")
+  var specialCharacters = confirm ("Would you like to include special characters?");
 
 
-if (numbers) {
+  if (numbers) {
   randomArray = randomArray.concat(numberOptions);
-}
+  }
 
-if (upperCases) {
+  if (upperCases) {
   randomArray = randomArray.concat(uppercaseOptions);
-}
+  }
 
-if (lowerCases) {
+  if (lowerCases) {
   randomArray = randomArray.concat(lowercaseOptions);
-}
+  }
 
-if (specialCharacters) {
+  if (specialCharacters) {
   randomArray = randomArray.concat(specialOptions);
-}
+  }
 
-console.log(randomArray)
+  console.log(randomArray)
 
-for (var i = 0; i > passLength; i++) {
+  for (var i = 0; i < passLength; i++) {
   passArray.push (randomArray[Math.floor(math.random() * randomArray.length)]);
-}
+  }
 
-return passArray.join("");
-
+  return passArray.join('');
 }
 
 // Write password to the #password input
