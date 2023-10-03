@@ -11,6 +11,34 @@ var specialOptions = ["@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "="
 var randomArray = [];
 var passArray = [];
 
+var passLength = prompt ("Choose a password length between 8 and 128 characters");
+var numbers = confirm ("Would you like to include numbers?");
+var upperCases = confirm ("Would like to include uppercases?")
+var lowerCases = confirm ("Would like to include lowercases?")
+var specialCharacters = confirm ("Would you like to include special characters?");
+
+
+if (numbers) {
+  randomArray = randomArray.concat(uppercaseOptions);
+}
+
+if (upperCases) {
+  randomArray = randomArray.concat(uppercaseOptions);
+}
+
+if (lowerCases) {
+  randomArray = randomArray.concat(lowercaseOptions);
+}
+
+if (specialCharacters) {
+  randomArray = randomArray.concat(specialOptions);
+}
+
+console.log(randomArray)
+
+for (var i = 0; i < passLength; i++) {
+  passArray.push (randomArray[Math.floor(math.random() * randomArray.length)]);
+}
 
 
 
@@ -26,3 +54,4 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
