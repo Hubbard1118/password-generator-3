@@ -15,13 +15,20 @@ function generatePassword () {
   var passArray = [];
 
   //Prompts to validate numbers, cases, and specials
-  var passLength = prompt ("Choose a password length between 8 and 128 characters");
+  var passLength = prompt ("Choose a password length from 8 to 128 characters");
+    if (isNaN (passLength)) {
+      return ("Try again!");
+    }
+    if (passLength < 8 || passLength > 128){
+      return ("Please select a number from 8-128!");
+    }
   var numbers = confirm ("Would you like to include numbers?");
   var upperCases = confirm ("Would you like to include uppercases?");
   var lowerCases = confirm ("Would you like to include lowercases?");
   var specialCharacters = confirm ("Would you like to include special characters?");
 
   //If statements add the selected character options to the empty  randomArray
+  
   if (numbers) {
     randomArray = randomArray.concat(numberOptions);
   }
@@ -37,14 +44,12 @@ function generatePassword () {
   if (specialCharacters) {
     randomArray = randomArray.concat(specialOptions);
   }
-
     console.log(randomArray)
-    
+
   //for loop here adds to the passArray based on character length
   for (var i = 0; i < passLength; i++) {
     passArray.push (randomArray[Math.floor(Math.random() * randomArray.length)]);
   }
-
     return passArray.join('-');
 }
 
